@@ -1,2 +1,2 @@
 # DevBlog
-Multi-User SEO Blogging platform with React, NextJs and MongoDB
+Multi-User SEO Blogging platform with React, NextJs and NodeJs
