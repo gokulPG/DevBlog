@@ -39,7 +39,7 @@ const userSchema = new mongoose.Schema(
         },
         role: {
             type: Number,
-            trim: true
+            default: 0
         },
         photo: {
             data: Buffer,
@@ -52,10 +52,6 @@ const userSchema = new mongoose.Schema(
     },
     { timestamp: true }
 );
-
-
-// In Mongoose, a virtual is a property that is not stored in MongoDB. Virtuals are typically used for computed properties on documents.
-// this refers to the document(USER) the virtual is attached to.
 
 userSchema
     .virtual('password')
@@ -70,8 +66,6 @@ userSchema
     .get(function() {
         return this._password;
     });
-
-
 
 userSchema.methods = {
     authenticate: function(plainText) {
